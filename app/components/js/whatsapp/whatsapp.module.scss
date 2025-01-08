@@ -1,0 +1,17 @@
+.whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  position: fixed;
+  z-index: 999999999999;
+  bottom: 2.5%;
+  left: 2.5%;
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  color: #fff;
+  box-shadow: -4px 4px 4px rgba(0, 128, 0, 0.108);
+}

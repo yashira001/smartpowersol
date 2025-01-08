@@ -1,0 +1,31 @@
+@use "../../utilities.module" as *;
+.main {
+  display: flex;
+
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  justify-content: flex-start;
+  .image {
+    min-width: 30%;
+    flex: 1;
+    max-width: 33%;
+    aspect-ratio: 1/1;
+    position: relative;
+    img {
+      object-fit: cover;
+      object-position: center 10%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    flex-direction: column;
+    .image {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+}

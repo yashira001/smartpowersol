@@ -1,0 +1,291 @@
+@use "../../../utilities.module" as *;
+.holder {
+  position: relative;
+  width: 100vw;
+
+  background: linear-gradient(to right, $bg, $w);
+  z-index: 8;
+
+  .carousel {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+
+    flex-direction: column;
+    overflow: hidden;
+    align-items: flex-start;
+    justify-content: center;
+
+    transition: 1s;
+    position: relative;
+    padding: 5% 10%;
+    min-height: 50vh;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img {
+      z-index: 1;
+      position: absolute;
+      height: 100%;
+      width: 60%;
+      right: 0;
+      top: 0;
+
+      img {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .text {
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      width: 50%;
+      gap: 10px;
+      font-size: 0.9rem;
+      z-index: 10;
+      background-color: $g;
+
+      padding: 24px;
+
+      box-shadow: 4px 4px 4px cwo($p, 0.1);
+
+      h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        font-weight: 900;
+        line-height: 3.6rem;
+
+        color: $p;
+      }
+    }
+  }
+  .lbg {
+    display: flex;
+    gap: 10px;
+    padding: 12px 10%;
+    font-size: 0.8rem;
+    align-items: center;
+    color: $bg;
+    background-color: $p;
+    .icon {
+      font-size: 1rem;
+      color: $t;
+    }
+  }
+}
+.sliders {
+  position: relative;
+  height: calc(100vh - 70px);
+  width: 100vw;
+
+  background-color: $bg;
+
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  .box {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+
+    .carousel {
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+      justify-content: flex-start;
+      // opacity: 0;
+      transition: 1s;
+      position: absolute;
+
+      background: $bg;
+      color: $b;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .img {
+        z-index: 1;
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+        right: 0%;
+        &::after {
+          content: "";
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          display: flex;
+          background: linear-gradient(150deg, cwo($bg, 0.8), transparent 70%);
+          z-index: 2;
+        }
+        .image {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          overflow: hidden;
+          z-index: 1;
+        }
+        img {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .text {
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 100%;
+        width: 50%;
+        gap: 20px;
+        font-size: 0.9rem;
+        z-index: 10;
+        position: relative;
+        padding-left: 10%;
+        padding-top: 5%;
+
+        h1 {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          margin: 0;
+          padding: 0;
+          font-weight: 500;
+          color: black;
+          span {
+            font-family: var(--bold);
+            font-weight: 900;
+            color: $s;
+          }
+        }
+        a {
+          padding: 12px 24px;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .holder {
+    height: unset;
+    .carousel {
+      justify-content: flex-end;
+      align-items: center;
+
+      min-height: 45vh;
+      padding: 0;
+      &::before {
+        display: none;
+      }
+      .img {
+        height: 25vh;
+        width: 100%;
+        position: relative;
+      }
+      .text {
+        flex-direction: column;
+
+        align-items: flex-start;
+        width: 100%;
+
+        gap: 20px;
+        font-size: 0.9rem;
+        padding: 10vw;
+        background-color: $bg;
+        h1 {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+        .links {
+          width: 100%;
+          justify-content: space-between;
+          background-color: transparent;
+          a {
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 12px;
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .sliders {
+    .box {
+      .carousel {
+        align-items: center;
+        .img {
+          width: 100%;
+          height: 60%;
+          top: unset;
+          bottom: 0;
+          right: unset;
+
+          &::after {
+            background: linear-gradient(to bottom, $bg, transparent 50%);
+          }
+          .image {
+            img {
+              object-position: center;
+            }
+          }
+        }
+
+        .text {
+          // height: 50%;
+          padding: 10%;
+          padding-top: 20%;
+          flex-direction: column;
+
+          align-items: flex-start;
+
+          width: 100%;
+
+          font-size: 0.9rem;
+
+          h1 {
+            font-size: 1.2rem;
+            span {
+              margin-top: 20px;
+              font-size: 2rem;
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+}

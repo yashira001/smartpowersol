@@ -1,0 +1,155 @@
+@use "../../utilities.module" as *;
+.footer {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+
+  flex-direction: column;
+
+  font-size: 0.85rem;
+  background: linear-gradient(to top, cwo($t, 0.9), cwo($p, 0.9)),
+    url("/assets/footer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $b;
+  div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .map {
+    width: 100%;
+
+    justify-content: center;
+  }
+  .top {
+    flex-direction: row;
+    width: 100%;
+    padding: 5% 10%;
+    justify-content: space-between;
+    align-items: flex-start;
+    .company {
+      position: relative;
+      width: 48%;
+      display: flex;
+      gap: 10px;
+      color: $w;
+      margin-top: 50px;
+
+      p {
+        text-align: left;
+      }
+    }
+    .cBox {
+      width: 48%;
+      gap: 10px;
+      color: $bg;
+      align-items: center;
+      text-align: center;
+      border: 1px solid $s;
+      border-radius: 12px;
+      padding: 12px;
+      h3 {
+        font-weight: 400;
+        font-size: 2rem;
+      }
+      .clients {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        position: relative;
+        width: 100%;
+        .client {
+          width: 30%;
+          background-color: $p;
+          border-radius: 6px;
+          padding: 12px;
+          border: 2px solid cwo($a, 0.2);
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+
+          .image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+  .center {
+    padding: 5% 10%;
+    color: $b;
+    border-top: 1px solid $t;
+    background: linear-gradient(to bottom, cwo($t, 0.2), $g);
+    background-color: $g;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    > * {
+      flex: 1;
+      a {
+        &:hover {
+          color: $s;
+        }
+      }
+      ul {
+        list-style: none;
+      }
+    }
+  }
+  .copy {
+    width: 100%;
+    padding: 10px 10%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $p;
+    color: $s;
+  }
+}
+
+//sm devices
+//sm devices
+//sm devices
+
+@media (max-width: 800px) {
+  .footer {
+    flex-direction: column;
+
+    .top {
+      flex-direction: column;
+      padding: 10vw;
+      gap: 50px;
+      .company {
+        margin: 0;
+        width: 100%;
+      }
+      .cBox {
+        width: 100%;
+        h3 {
+          font-size: 1.5rem;
+        }
+        .clients {
+          .client {
+            width: 45%;
+          }
+        }
+      }
+    }
+    .center {
+      padding: 10vw;
+      gap: 20px;
+    }
+    .copy {
+      text-align: center;
+      padding: 12px 5%;
+    }
+  }
+}

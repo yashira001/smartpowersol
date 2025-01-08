@@ -1,0 +1,59 @@
+@use "../../utilities.module" as *;
+.main {
+  display: flex;
+
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: calc(100vh - 80px);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .left {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    img {
+      object-fit: cover;
+      object-position: center 10%;
+    }
+  }
+  .right {
+    font-size: 0.85rem;
+    height: 100%;
+    overflow-y: auto;
+    width: 50%;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5%;
+    h1,
+    h2,
+    h3 {
+      color: $p;
+    }
+    ul {
+      padding-left: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    flex-direction: column;
+    height: unset;
+    padding: 10vw;
+    gap: 50px;
+    .left {
+      width: 100%;
+      height: 40vh;
+    }
+    .right {
+      width: 100%;
+      height: unset;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@use "../../../utilities.module" as *;
+.main {
+  display: flex;
+  width: 100%;
+  font-size: 0.85rem;
+
+  gap: 40px;
+  padding: 10%;
+  position: relative;
+  justify-content: flex-end;
+
+  div {
+    display: flex;
+  }
+
+  .left {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    .image {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+  .right {
+    z-index: 2;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: $w;
+      text-shadow: 0 0 4px cwo($b, 0.8);
+    }
+    .grid {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 40px;
+
+      .item {
+        flex-direction: column;
+        align-items: flex-start;
+
+        flex: 1;
+        max-width: calc(50% - 20px);
+        min-width: 40%;
+        background-color: cwo($b, 0.5);
+        color: $w;
+        border-radius: 12px;
+        // clip-path: polygon(0 0, 84% 0, 100% 10%, 100% 100%, 0 100%);
+        overflow: hidden;
+        transition: 0.75s;
+
+        .image {
+          position: relative;
+          width: 100%;
+          height: 40vh;
+          border-radius: 0 0 25px 25px;
+          overflow: hidden;
+
+          img {
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .text {
+          flex-direction: column;
+          gap: 20px;
+          padding: 24px;
+          .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            transition: 0.75s;
+            gap: 5px;
+            color: $s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    .right {
+      width: 100%;
+
+      .grid {
+        .item {
+          max-width: 100%;
+          min-width: 100%;
+
+          .image {
+            height: 25vh;
+          }
+        }
+      }
+    }
+  }
+}
