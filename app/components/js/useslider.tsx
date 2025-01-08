@@ -98,7 +98,7 @@ export const useSlideUp = (ids: string[]) => {
           observer.unobserve(entry.target);
         } else {
           target.style.transform =
-            index % 2 === 0 ? "translateY(150px)" : "translateY(200px)";
+            index % 2 === 0 ? "translateY(100px)" : "translateY(80px)";
           target.style.opacity = "0.8";
           target.style.transition = "0.75s";
         }

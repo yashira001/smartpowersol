@@ -60,6 +60,7 @@
           border-radius: 50%;
           overflow: hidden;
           border: 2px solid cwo($w, 0.4);
+          background-color: cwo($w, 0.8);
         }
         span {
           color: $w;

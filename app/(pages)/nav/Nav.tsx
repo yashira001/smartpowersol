@@ -66,7 +66,7 @@ const Nav: React.FC = () => {
     const handler = () => {
       const body = document.querySelector("body");
       const top = body?.getBoundingClientRect().top || 0;
-      if (top < -20) setScrolled(true);
+      if (top < -300) setScrolled(true);
       else {
         setScrolled(false);
       }

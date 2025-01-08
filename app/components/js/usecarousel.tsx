@@ -44,7 +44,7 @@ export default function useCarousel({
         });
       }
     }
-  }, [parentId, handlerId, indicatorId]);
+  });
   useEffect(() => {
     const parent = document.getElementById(parentId) as HTMLDivElement;
 
@@ -56,20 +56,33 @@ export default function useCarousel({
       for (let i = 0; i < pChildren.length; i++) {
         const child = sChildren.item(i) as HTMLSpanElement;
         child.style.backgroundColor =
-          currIndex == i ? "var(--p)" : "transparent";
+          currIndex == i ? "var(--s)" : "transparent";
       }
     }
 
     for (let i = 0; i < pChildren.length; i++) {
       const child = pChildren.item(i) as HTMLDivElement;
 
-      child.style.transition = "1.5s";
+      child.style.transition = "0.75s";
       child.style.position = "absolute";
-      child.style.opacity = currIndex == i ? "1" : "0";
+      child.style.zIndex = currIndex == i ? "3" : "1";
+      child.style.opacity = currIndex == i ? "1" : "0.6";
+      child.style.translate =
+        currIndex == i
+          ? "0px"
+          : (i + 1 || i - 1) == currIndex
+          ? "0px"
+          : "-100%";
     }
+  }, [currIndex, indicatorId, parentId]);
+
+  useEffect(() => {
+    const parent = document.getElementById(parentId) as HTMLDivElement;
+
+    const pChildren = parent.children;
     const inv = setInterval(() => {
       forward(pChildren.length);
-    }, 10000);
+    }, 8000);
 
     return () => {
       clearInterval(inv);

@@ -17,18 +17,18 @@ export default function Services() {
       image: "storage.jpeg",
     },
     {
-      title: "Custom Renewable Energy Design",
-      text: "Tailored renewable energy system designs to meet the unique energy needs of each client.",
+      title: "Solar Street Lights",
+      text: "Tailored solar street lighting solutions to provide efficient and sustainable outdoor illumination.",
       image: "custom.jpeg",
     },
     {
-      title: "Electrical Installations",
-      text: "Comprehensive electrical installation services for residential, commercial, and industrial clients, designed to meet safety and performance standards.",
+      title: "High Voltage Battery",
+      text: "Installation of advanced high-voltage battery systems for enhanced energy storage and reliability.",
       image: "electrical.jpeg",
     },
     {
-      title: "Emergency Repair and Maintenance",
-      text: "Fast and reliable repair and maintenance services to ensure uninterrupted power supply for your property.",
+      title: "Electrical Piping of a Storey Building with a Penthouse",
+      text: "Comprehensive electrical piping services for multi-level buildings, ensuring safety and adherence to standards.",
       image: "repair.jpeg",
     },
     {
@@ -46,13 +46,13 @@ export default function Services() {
       text: "Expert consulting services to guide clients toward affordable, efficient, and sustainable energy solutions.",
       image: "consultation.jpeg",
     },
-
     {
       title: "CO2 Emission Reduction Initiatives",
       text: "Contributing to environmental sustainability through energy-efficient solutions that help reduce carbon emissions.",
       image: "initiative.jpg",
     },
   ];
+
   useSlider(["services"]);
   useBg("imgcont");
   return (

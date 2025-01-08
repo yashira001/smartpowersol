@@ -2,13 +2,14 @@
 
 import styles from "./styles.module.scss";
 import { Topper, TopperType } from "@/app/components/js/carousel/Carousel";
+import { useSlideUp } from "@/app/components/js/useslider";
 
 import Image from "next/image";
 
 export default function Body() {
   const data: TopperType = {
     title: "A Visual Showcase of Our Expertise",
-    img: "/assets/mockup.jpeg",
+    img: "/assets/gallery.webp",
     text: [
       `Explore our gallery to see the quality and craftsmanship that goes into every Smart Tech & Power Solutions project.`,
     ],
@@ -33,11 +34,12 @@ export default function Body() {
     "8.jpeg",
     "repair.jpeg",
   ];
+  useSlideUp(["images"]);
   return (
     <>
       <Topper data={data} />
 
-      <div className={`${styles.main}`}>
+      <div className={`${styles.main}`} id="images">
         <video
           className={styles.image}
           src="/assets/video.mp4"
@@ -45,6 +47,7 @@ export default function Body() {
           controls
           muted
           loop
+          playsInline
         />
 
         {images.map((e, i) => (

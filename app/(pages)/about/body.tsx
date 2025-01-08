@@ -98,7 +98,7 @@ export default function Body() {
       ],
     },
     {
-      name: "Owoseseni Oyindamola",
+      name: "Owoseni Oyindamola",
       position: "Customer Experience Manager",
       img: "owoseseni.jpeg", // Placeholder for image
       texts: [
